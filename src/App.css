@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: aliceblue;
+  background-color: rgb(23, 22, 21);
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-container {
+  border-radius: 1rem;
+  padding: 1.6rem;
+  background-color: white;
+  display: flex;
+  width: 60%;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+strong {
+  color: black;
+}
+
+button {
+  color: white;
+  background-color: blueviolet;
+  margin-top: 1rem;
+  width: 30%;
+}
