@@ -18,10 +18,27 @@ h1 {
   padding: 1.6rem;
   background-color: white;
   display: flex;
-  width: 60%;
+  width: 40%;
   margin: auto;
   justify-content: center;
   flex-direction: column;
+}
+
+.input-list-container {
+  border-radius: 1rem;
+  padding: 1.6rem;
+  background-color: white;
+  display: flex;
+  width: 40%;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.input-list-item {
+  border: solid rgb(188, 188, 188);
+  padding: 0.6rem;
 }
 
 strong {

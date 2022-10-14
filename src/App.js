@@ -1,16 +1,13 @@
 import "./App.css";
+import Input from "./Input";
+import InputList from "./InputList";
 
 function App() {
   return (
     <div className="App">
       <h1>Practice Project </h1>
-      <div className="input-container">
-        <strong>Username</strong>
-        <input></input>
-        <strong>Age (Years)</strong>
-        <input></input>
-        <button>Add User</button>
-      </div>
+      <Input />
+      <InputList />
     </div>
   );
 }
