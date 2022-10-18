@@ -9,6 +9,8 @@ function App() {
     { text: "John (31 years old)", id: "g1" },
   ]);
 
+  const errorMessage = (errorMessage) => {};
+
   const addInfoHandler = (enteredUsername, enteredAge) => {
     setUserInfo((prevInfo) => {
       const updatedInfo = [...prevInfo];
@@ -40,7 +42,6 @@ function App() {
       <h1>Practice Project </h1>
       <Input onAddInfo={addInfoHandler} />
       {content}
-      <Modal />
     </div>
   );
 }
