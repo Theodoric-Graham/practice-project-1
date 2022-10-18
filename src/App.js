@@ -2,6 +2,7 @@ import "./App.css";
 import Input from "./Input";
 import React, { useState } from "react";
 import InputList from "./InputList";
+import Modal from "./Modal";
 
 function App() {
   const [userInfo, setUserInfo] = useState([
@@ -27,7 +28,7 @@ function App() {
   };
 
   let content = (
-    <p style={{ textAlign: "center" }}>No information found. Maybe add one?</p>
+    <p style={{ textAlign: "center" }}>No users found. Maybe add one?</p>
   );
 
   if (userInfo.length > 0) {
@@ -39,6 +40,7 @@ function App() {
       <h1>Practice Project </h1>
       <Input onAddInfo={addInfoHandler} />
       {content}
+      <Modal />
     </div>
   );
 }

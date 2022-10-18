@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import InvalidUsername from "./InvalidUsername";
+import InvalidAge from "./InvalidAge";
 
 const Input = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -23,13 +25,15 @@ const Input = (props) => {
     event.preventDefault();
     if (enteredUsername.trim().length === 0) {
       console.log("not valid");
+
       setIsValid(false);
-      return;
+      <InvalidUsername />;
     }
     if (Math.sign(enteredAge) !== 1) {
       console.log("not a digit");
+
       setIsValid(false);
-      return;
+      return <InvalidAge />;
     }
     props.onAddInfo(enteredUsername, enteredAge);
   };
