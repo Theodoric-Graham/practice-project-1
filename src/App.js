@@ -1,13 +1,44 @@
 import "./App.css";
 import Input from "./Input";
+import React, { useState } from "react";
 import InputList from "./InputList";
 
 function App() {
+  const [userInfo, setUserInfo] = useState([
+    { text: "John (31 years old)", id: "g1" },
+  ]);
+
+  const addInfoHandler = (enteredUsername, enteredAge) => {
+    setUserInfo((prevInfo) => {
+      const updatedInfo = [...prevInfo];
+      updatedInfo.unshift({
+        text: `${enteredUsername} (${enteredAge} years old)`,
+        id: Math.random().toString(),
+      });
+      return updatedInfo;
+    });
+  };
+
+  const deleteItemHandler = (infoId) => {
+    setUserInfo((prevInfo) => {
+      const updatedInfo = prevInfo.filter((info) => info.id !== infoId);
+      return updatedInfo;
+    });
+  };
+
+  let content = (
+    <p style={{ textAlign: "center" }}>No information found. Maybe add one?</p>
+  );
+
+  if (userInfo.length > 0) {
+    content = <InputList items={userInfo} onDeleteItem={deleteItemHandler} />;
+  }
+
   return (
     <div className="App">
       <h1>Practice Project </h1>
-      <Input />
-      <InputList />
+      <Input onAddInfo={addInfoHandler} />
+      {content}
     </div>
   );
 }

@@ -51,3 +51,14 @@ button {
   margin-top: 1rem;
   width: 30%;
 }
+
+li {
+  text-align: center;
+  background-color: white;
+  color: black;
+  width: 40%;
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  list-style: none;
+}

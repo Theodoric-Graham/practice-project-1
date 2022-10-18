@@ -1,8 +1,14 @@
-const InputList = () => {
+import InputItem from "./InputItem";
+
+const InputList = (props) => {
   return (
-    <div className="input-list-container">
-      <strong className="input-list-item">Username Age (Years)</strong>
-    </div>
+    <ul className="info-list">
+      {props.items.map((info) => (
+        <InputItem key={info.id} id={info.id} onDelete={props.onDeleteItem}>
+          {info.text}
+        </InputItem>
+      ))}
+    </ul>
   );
 };
 
