@@ -36,6 +36,7 @@ const Input = (props) => {
       setErrorMessage("age: Must be a number above 0");
       return;
     }
+    setErrorMessage("");
     props.onAddInfo(enteredUsername, enteredAge);
   };
 

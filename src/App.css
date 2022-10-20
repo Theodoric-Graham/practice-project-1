@@ -68,7 +68,7 @@ p {
   font-size: 1.6rem;
 }
 
-.modal {
+.modal-show {
   text-align: center;
   background: white;
   color: black;
@@ -82,4 +82,8 @@ p {
   opacity: 1;
   visibility: visible;
   border-radius: 1rem;
+}
+
+.modal-hidden {
+  display: none;
 }
