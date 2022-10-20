@@ -6,10 +6,8 @@ import Modal from "./Modal";
 
 function App() {
   const [userInfo, setUserInfo] = useState([
-    { text: "John (31 years old)", id: "g1" },
+    // { text: "John (31 years old)", id: "g1" },
   ]);
-
-  const errorMessage = (errorMessage) => {};
 
   const addInfoHandler = (enteredUsername, enteredAge) => {
     setUserInfo((prevInfo) => {

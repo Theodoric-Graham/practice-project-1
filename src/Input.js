@@ -7,13 +7,13 @@ const Input = (props) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const usernameChangeHandler = (event) => {
-    if (event.target.value.trim().length > 0) {
-      setEnteredUsername(event.target.value);
+    if (event.target.value.trim().length >= 0) {
     }
+    setEnteredUsername(event.target.value);
   };
 
   const ageChangeHandler = (event) => {
-    if (event.target.value.trim().length > 0) {
+    if (event.target.value.trim().length >= 0) {
       setEnteredAge(event.target.value);
     }
   };
@@ -36,8 +36,10 @@ const Input = (props) => {
       setErrorMessage("age: Must be a number above 0");
       return;
     }
-    setErrorMessage("");
+
     props.onAddInfo(enteredUsername, enteredAge);
+    setEnteredUsername("");
+    setEnteredAge("");
   };
 
   return (
@@ -45,9 +47,13 @@ const Input = (props) => {
       <form onSubmit={formSubmitHandler}>
         <div className={"input-container"}>
           <strong>Username</strong>
-          <input type="text" onChange={usernameChangeHandler} />
+          <input
+            type="text"
+            value={enteredUsername}
+            onChange={usernameChangeHandler}
+          />
           <strong>Age (Years)</strong>
-          <input type="text" onChange={ageChangeHandler} />
+          <input type="text" value={enteredAge} onChange={ageChangeHandler} />
           <button type="submit">Add User</button>
         </div>
       </form>
