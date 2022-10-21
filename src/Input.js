@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import Modal from "./Modal";
 
 const Input = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
 
   const usernameChangeHandler = (event) => {
     if (event.target.value.trim().length >= 0) {
@@ -22,22 +20,19 @@ const Input = (props) => {
     event.preventDefault();
     if (enteredUsername.trim().length === 0) {
       console.log("not valid");
-      props.error(true);
+      props.error("username: Username is empty");
 
-      setErrorMessage("username: Username is empty");
       return;
     }
 
     if (/[^a-zA-Z]/.test(enteredUsername)) {
-      props.error(true);
+      props.error("username: Username cannot contain numbers");
 
-      setErrorMessage("username: Username cannot contain numbers");
       return;
     }
     if (Math.sign(enteredAge) !== 1) {
       // console.log("not a digit");
-      props.error(true);
-      setErrorMessage("age: Must be a number above 0");
+      props.error("age: Must be a number above 0");
       return;
     }
 

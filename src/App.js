@@ -12,8 +12,7 @@ function App() {
 
   const errorCheck = (errorMessage) => {
     if (errorMessage) {
-      setErr(true);
-      console.log(err);
+      setErr(errorMessage);
     }
   };
 
@@ -50,7 +49,7 @@ function App() {
         <Input onAddInfo={addInfoHandler} error={errorCheck} />
         {content}
       </div>
-      <Modal />
+      <Modal error={err} />
     </div>
   );
 }
