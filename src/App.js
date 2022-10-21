@@ -8,6 +8,14 @@ function App() {
   const [userInfo, setUserInfo] = useState([
     // { text: "John (31 years old)", id: "g1" },
   ]);
+  const [err, setErr] = useState(false);
+
+  const errorCheck = (errorMessage) => {
+    if (errorMessage) {
+      setErr(true);
+      console.log(err);
+    }
+  };
 
   const addInfoHandler = (enteredUsername, enteredAge) => {
     setUserInfo((prevInfo) => {
@@ -36,10 +44,13 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1>Practice Project </h1>
-      <Input onAddInfo={addInfoHandler} />
-      {content}
+    <div className={`App `}>
+      <div className={`${err ? "is-blurred" : ""}`}>
+        <h1>Practice Project </h1>
+        <Input onAddInfo={addInfoHandler} error={errorCheck} />
+        {content}
+      </div>
+      <Modal />
     </div>
   );
 }
