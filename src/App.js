@@ -8,12 +8,10 @@ function App() {
   const [userInfo, setUserInfo] = useState([
     // { text: "John (31 years old)", id: "g1" },
   ]);
-  const [err, setErr] = useState(false);
+  const [err, setErr] = useState("");
 
   const errorCheck = (errorMessage) => {
-    if (errorMessage) {
-      setErr(errorMessage);
-    }
+    setErr(errorMessage);
   };
 
   const addInfoHandler = (enteredUsername, enteredAge) => {
@@ -49,7 +47,7 @@ function App() {
         <Input onAddInfo={addInfoHandler} error={errorCheck} />
         {content}
       </div>
-      <Modal error={err} />
+      <Modal errorCheck={errorCheck} error={err} />
     </div>
   );
 }

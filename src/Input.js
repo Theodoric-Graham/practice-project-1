@@ -19,17 +19,16 @@ const Input = (props) => {
   const formSubmitHandler = (event) => {
     event.preventDefault();
     if (enteredUsername.trim().length === 0) {
-      console.log("not valid");
+      // console.log("not valid");
       props.error("username: Username is empty");
-
       return;
     }
 
     if (/[^a-zA-Z]/.test(enteredUsername)) {
       props.error("username: Username cannot contain numbers");
-
       return;
     }
+
     if (Math.sign(enteredAge) !== 1) {
       // console.log("not a digit");
       props.error("age: Must be a number above 0");

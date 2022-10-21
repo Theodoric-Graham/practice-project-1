@@ -1,8 +1,12 @@
 const Modal = (props) => {
+  const closeModalHandler = () => {
+    props.errorCheck(null);
+  };
+
   return (
     <div className={`modal-${!props.error ? "hidden" : "show"}`}>
       {`Incorrect ${props.error}`}
-      <button>Close</button>
+      <button onClick={closeModalHandler}>Close</button>
     </div>
   );
 };
