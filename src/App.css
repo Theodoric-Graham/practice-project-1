@@ -13,6 +13,10 @@ h1 {
   text-align: center;
 }
 
+label {
+  color: #000;
+}
+
 .input-container {
   border-radius: 1rem;
   padding: 1.6rem;

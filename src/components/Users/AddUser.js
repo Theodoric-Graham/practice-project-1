@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Input = (props) => {
+const AddUser = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
@@ -16,7 +16,7 @@ const Input = (props) => {
     }
   };
 
-  const formSubmitHandler = (event) => {
+  const addUserHandler = (event) => {
     event.preventDefault();
     if (enteredUsername.trim().length === 0) {
       // console.log("not valid");
@@ -41,22 +41,33 @@ const Input = (props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={formSubmitHandler}>
-        <div className={"input-container"}>
-          <strong>Username</strong>
-          <input
-            type="text"
-            value={enteredUsername}
-            onChange={usernameChangeHandler}
-          />
-          <strong>Age (Years)</strong>
-          <input type="text" value={enteredAge} onChange={ageChangeHandler} />
-          <button type="submit">Add User</button>
-        </div>
-      </form>
-    </div>
+    <form className="input-container" onSubmit={addUserHandler}>
+      <label htmlFor="username">Username</label>
+      <input id="username" type="text" />
+      <label htmlFor="age">Age (Years)</label>
+      <input id="age" type="number" />
+      <button type="submit">Add User</button>
+    </form>
   );
+
+  // ****** MY WAY *******
+  //   return (
+  //     <div>
+  //       <form onSubmit={formSubmitHandler}>
+  //         <div className={"input-container"}>
+  //           <strong>Username</strong>
+  //           <input
+  //             type="text"
+  //             value={enteredUsername}
+  //             onChange={usernameChangeHandler}
+  //           />
+  //           <strong>Age (Years)</strong>
+  //           <input type="text" value={enteredAge} onChange={ageChangeHandler} />
+  //           <button type="submit">Add User</button>
+  //         </div>
+  //       </form>
+  //     </div>
+  //   );
 };
 
-export default Input;
+export default AddUser;

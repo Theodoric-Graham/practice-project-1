@@ -1,5 +1,5 @@
 import "./App.css";
-import Input from "./Input";
+import Input from "./components/Users/AddUser";
 import React, { useState } from "react";
 import InputList from "./InputList";
 import Modal from "./Modal";
