@@ -17,17 +17,6 @@ label {
   color: #000;
 }
 
-.input-container {
-  border-radius: 1rem;
-  padding: 1.6rem;
-  background-color: white;
-  display: flex;
-  width: 40%;
-  margin: auto;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .input-list-container {
   border-radius: 1rem;
   padding: 1.6rem;

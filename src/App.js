@@ -41,8 +41,8 @@ function App() {
   }
 
   return (
-    <div className={`App `}>
-      <div className={`${err ? "is-blurred" : ""}`}>
+    <div>
+      <div>
         <h1>Practice Project </h1>
         <Input onAddInfo={addInfoHandler} error={errorCheck} />
         {content}
