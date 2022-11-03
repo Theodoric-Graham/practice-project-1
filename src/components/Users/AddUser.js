@@ -7,49 +7,63 @@ const AddUser = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
+  const addUserHandler = (event) => {
+    event.preventDefault();
+    console.log(enteredUsername, enteredAge);
+  };
+
   const usernameChangeHandler = (event) => {
-    if (event.target.value.trim().length >= 0) {
-    }
     setEnteredUsername(event.target.value);
   };
 
   const ageChangeHandler = (event) => {
-    if (event.target.value.trim().length >= 0) {
-      setEnteredAge(event.target.value);
-    }
+    setEnteredAge(event.target.value);
   };
 
-  const addUserHandler = (event) => {
-    event.preventDefault();
-    if (enteredUsername.trim().length === 0) {
-      // console.log("not valid");
-      props.error("username: Username is empty");
-      return;
-    }
+  // ****** MY WAY *******
+  // const usernameChangeHandler = (event) => {
+  //   if (event.target.value.trim().length >= 0) {
+  //   }
+  //   setEnteredUsername(event.target.value);
+  // };
 
-    if (/[^a-zA-Z]/.test(enteredUsername)) {
-      props.error("username: Username cannot contain numbers");
-      return;
-    }
+  // const ageChangeHandler = (event) => {
+  //   if (event.target.value.trim().length >= 0) {
+  //     setEnteredAge(event.target.value);
+  //   }
+  // };
 
-    if (Math.sign(enteredAge) !== 1) {
-      // console.log("not a digit");
-      props.error("age: Must be a number above 0");
-      return;
-    }
+  // const addUserHandler = (event) => {
+  //   event.preventDefault();
+  //   if (enteredUsername.trim().length === 0) {
+  //     // console.log("not valid");
+  //     props.error("username: Username is empty");
+  //     return;
+  //   }
 
-    props.onAddInfo(enteredUsername, enteredAge);
-    setEnteredUsername("");
-    setEnteredAge("");
-  };
+  //   if (/[^a-zA-Z]/.test(enteredUsername)) {
+  //     props.error("username: Username cannot contain numbers");
+  //     return;
+  //   }
+
+  //   if (Math.sign(enteredAge) !== 1) {
+  //     // console.log("not a digit");
+  //     props.error("age: Must be a number above 0");
+  //     return;
+  //   }
+
+  //   props.onAddInfo(enteredUsername, enteredAge);
+  //   setEnteredUsername("");
+  //   setEnteredAge("");
+  // };
 
   return (
     <Card className={classes.input}>
       <form onSubmit={addUserHandler}>
         <label htmlFor="username">Username</label>
-        <input id="username" type="text" />
+        <input id="username" type="text" onChange={usernameChangeHandler} />
         <label htmlFor="age">Age (Years)</label>
-        <input id="age" type="number" />
+        <input id="age" type="number" onChange={ageChangeHandler} />
         <Button type="submit">Add User</Button>
       </form>
     </Card>
