@@ -1,12 +1,12 @@
-import InputItem from "./InputItem";
+import Card from "../UI/Card";
 
 const InputList = (props) => {
   return (
     <ul className="info-list">
       {props.items.map((info) => (
-        <InputItem key={info.id} id={info.id} onDelete={props.onDeleteItem}>
-          {info.text}
-        </InputItem>
+        <li>
+          {info.name} ({info.age} years old)
+        </li>
       ))}
     </ul>
   );

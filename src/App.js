@@ -1,8 +1,8 @@
 import "./App.css";
 import Input from "./components/Users/AddUser";
 import React, { useState } from "react";
-import InputList from "./InputList";
 import Modal from "./Modal";
+import InputList from "./components/Users/InputList";
 
 function App() {
   const [userInfo, setUserInfo] = useState([
@@ -32,20 +32,20 @@ function App() {
     });
   };
 
-  let content = (
-    <p style={{ textAlign: "center" }}>No users found. Maybe add one?</p>
-  );
+  // let content = (
+  //   <p style={{ textAlign: "center" }}>No users found. Maybe add one?</p>
+  // );
 
-  if (userInfo.length > 0) {
-    content = <InputList items={userInfo} onDeleteItem={deleteItemHandler} />;
-  }
+  // if (userInfo.length > 0) {
+  //   content = <InputList items={userInfo} onDeleteItem={deleteItemHandler} />;
+  // }
 
   return (
     <div>
       <div>
         <h1>Practice Project </h1>
         <Input onAddInfo={addInfoHandler} error={errorCheck} />
-        {content}
+        {InputList}
       </div>
       <Modal errorCheck={errorCheck} error={err} />
     </div>
