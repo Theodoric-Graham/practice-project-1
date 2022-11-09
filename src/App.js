@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+import "./App.css";
+
 import UsersList from "./components/Users/UsersList";
 import AddUser from "./components/Users/AddUser";
 
@@ -37,11 +40,21 @@ function App() {
   // if (userInfo.length > 0) {
   //   content = <InputList items={userInfo} onDeleteItem={deleteItemHandler} />;
   // }
+  const [usersList, setUsersList] = useState([]);
+
+  const addUserHandler = (uName, uAge) => {
+    setUsersList((prevUsersList) => {
+      return [
+        ...prevUsersList,
+        { name: uName, age: uAge, id: Math.random().toString() },
+      ];
+    });
+  };
 
   return (
     <div>
-      <AddUser />
-      <UsersList users={[]} />
+      <AddUser onAddUser={addUserHandler} />
+      <UsersList users={usersList} />
     </div>
   );
 }
