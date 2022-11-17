@@ -4,18 +4,22 @@ import classes from "./AddUser.module.css";
 import Button from "../UI/Button";
 
 const AddUser = (props) => {
+  //create state
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
   const addUserHandler = (event) => {
     event.preventDefault();
+    //error checks, required field
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       return;
     }
+    //changes to number
     if (+enteredAge < 1) {
       return;
     }
     props.onAddUser(enteredUsername, enteredAge);
+    //resets state and clears fields
     setEnteredUsername("");
     setEnteredAge("");
   };
