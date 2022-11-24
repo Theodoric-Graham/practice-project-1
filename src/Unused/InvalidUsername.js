@@ -1,3 +1,5 @@
+//Unused original code
+
 const InvalidUsername = () => {
   return (
     <div className="username-invalid">

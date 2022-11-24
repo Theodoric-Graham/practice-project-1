@@ -1,3 +1,5 @@
+//Unused original code
+
 const Modal = (props) => {
   const closeModalHandler = () => {
     props.errorCheck(null);

@@ -1,3 +1,5 @@
+//Unused original code
+
 const InputItem = (props) => {
   // const [deleteText, setDeleteText] = useState('');
 
