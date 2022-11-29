@@ -83,6 +83,10 @@ const AddUser = (props) => {
   //   setEnteredAge("");
   // };
 
+  //JSX Limitations "You can't have more than one root JSX element" use div as a
+  //workaround (Doesn't have to be a div, any element will work)
+  //A New problem: "<div> Soup", can end up with tons of unnecessary <div>s, which add no
+  //semantic meanting or structure
   return (
     <div>
       {error && (
