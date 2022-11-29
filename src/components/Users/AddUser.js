@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import classes from "./AddUser.module.css";
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
 
 const AddUser = (props) => {
   //create state
@@ -87,8 +88,9 @@ const AddUser = (props) => {
   //workaround (Doesn't have to be a div, any element will work)
   //A New problem: "<div> Soup", can end up with tons of unnecessary <div>s, which add no
   //semantic meanting or structure
+  //by using a wrapper we can avoid a div soup and meet the JSX requirements of returning one element
   return (
-    <div>
+    <Wrapper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -115,7 +117,7 @@ const AddUser = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 
   // ****** MY WAY *******
